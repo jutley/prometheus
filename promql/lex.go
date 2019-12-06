@@ -279,6 +279,10 @@ func (i ItemType) String() string {
 	return fmt.Sprintf("<item %d>", i)
 }
 
+func (i ItemType) MarshalJSON() ([]byte, error) {
+	return []byte(`"` + i.String() + `"`), nil
+}
+
 func (i item) desc() string {
 	if _, ok := itemTypeStr[i.typ]; ok {
 		return i.String()

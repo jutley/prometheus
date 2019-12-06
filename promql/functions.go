@@ -48,7 +48,7 @@ type Function struct {
 	// Instant vector functions need only return a vector with the right values and
 	//     metrics, the timestamp are not needed.
 	// Scalar results should be returned as the value of a sample in a Vector.
-	Call func(vals []Value, args Expressions, enh *EvalNodeHelper) Vector
+	Call func(vals []Value, args Expressions, enh *EvalNodeHelper) Vector `json:"-"`
 }
 
 // === time() float64 ===
